@@ -2,21 +2,21 @@ from collections import deque
 
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-        m, n = len(image), len(image [0])
-        start_color = image[sr][sc]
-        if color == start_color:
+        if not image or image[sr][sc] == color:
             return image
 
-        def dfs(i, j):
-            if i < 0 or i >= m or j < 0 or j >= n or image[i][j] != start_color:
-                return
-            image[i][j] = color
-            dfs(i-1, j)
-            dfs(i+1, j)
-            dfs(i, j-1)
-            dfs(i, j+1)
+        original_color = image[sr][sc]
+        queue = deque([(sr, sc)])
+        image[sr][sc] = color
 
-        dfs(sr, sc)
+        while queue:
+            i, j = queue.popleft()
+            for di, dj in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                new_i, new_j = i + di, j + dj
+                if 0 <= new_i < len(image) and 0 <= new_j < len(image [0]) and image[new_i][new_j] == original_color:
+                    image[new_i][new_j] = color
+                    queue.append((new_i, new_j))
+
         return image
 
 

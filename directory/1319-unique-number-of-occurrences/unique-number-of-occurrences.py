@@ -29,3 +29,14 @@ class Solution:
         # len([1, 1]) is 2, but len(set([1, 1])) is 1. Since 2 != 1, it would return False.
 
 '''
+
+'''
+Count Frequencies: The best way to count the occurrences of each number in the array is to use a hash map. We'll iterate through the array and store each number as a key and its frequency as the value. For example, [1, 2, 2, 1, 1, 3] becomes {1: 3, 2: 2, 3: 1}.
+
+Check for Unique Counts: Now that we have the frequencies (3, 2, and 1 in our example), we need to check if these numbers are all unique. The easiest way to do this is to add them to a hash set, which automatically discards duplicates.
+
+Compare Sizes: If the number of frequencies we found is equal to the size of our hash set, it means no frequencies were discarded, so they must all be unique. If the sizes are different, it means there was at least one duplicate frequency.
+
+Python Solution
+This solution uses Python's collections.Counter, a specialized dictionary subclass for counting hashable objects, which simplifies Step 1.
+'''

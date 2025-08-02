@@ -18,6 +18,5 @@ class Solution:
                 operations += 1
                 count[num] -= 1
                 count[complement] -= 1
-        
         return operations
 

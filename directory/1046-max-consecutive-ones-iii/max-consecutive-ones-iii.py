@@ -19,6 +19,8 @@ class Solution:
 
         return max_length
 
+# we are finding a window with k number of zero by sliding accross and the comapring window sizes to max window sizes
+
 
 #To solve the problem of finding the maximum number of consecutive 1's in a binary array nums when you can flip at most k 0's, you can use the sliding window technique. Here's a step-by-step explanation of how to implement this:
 

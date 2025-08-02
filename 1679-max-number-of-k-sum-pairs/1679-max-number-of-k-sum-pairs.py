@@ -7,21 +7,17 @@ class Solution:
         count = Counter(nums)
         operations = 0
 
-        # The main loop iterates through each number in the original list.
-for num in nums:
-    # Calculate the number needed to sum to k.
-    complement = k - num
-
-    # Check if the current number and its complement are available.
-    if count[num] > 0 and count[complement] > 0:
-        # Special case: If the number is its own complement (e.g., k=6, num=3).
-        if num == complement and count[num] < 2:
-            # If there aren't at least two of the same number, we can't form a pair.
-            # We skip this number and continue to the next one.
-            continue
+        for num in nums:
+            # Check if the complement (k - num) exists in the counter.
+            complement = k - num
+            if count[num] > 0 and count[complement] > 0:
+                # If the number and its complement are the same, ensure there are at least two instances.
+                if num == complement and count[num] < 2:
+                    continue
+                # Increment operations and decrement the count of the number and its complement.
+                operations += 1
+                count[num] -= 1
+                count[complement] -= 1
         
-        # If we found a valid pair, perform an operation.
-        operations += 1
-        # Decrement the count for both numbers to show they have been "used".
-        count[num] -= 1
-        count[complement] -= 1
+        return operations
+

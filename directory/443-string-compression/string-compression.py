@@ -6,8 +6,8 @@ class Solution:
         write = 1
         prev_char = chars[0]
         count = 1
-
-        for char in chars[1:]:
+        for char in chars[1:]: 
+            #This is a slicing operation. It creates a new list or new string that is a shallow copy of the original, starting from a specific index and going to the end.
             if char == prev_char:
                 count += 1
             else:

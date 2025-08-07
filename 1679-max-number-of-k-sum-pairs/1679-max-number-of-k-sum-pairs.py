@@ -6,7 +6,6 @@ class Solution:
         # Create a counter for the numbers in the array.
         count = Counter(nums)
         operations = 0
-
         for num in nums:
             # Check if the complement (k - num) exists in the counter.
             complement = k - num
@@ -18,6 +17,5 @@ class Solution:
                 operations += 1
                 count[num] -= 1
                 count[complement] -= 1
-        
         return operations
 

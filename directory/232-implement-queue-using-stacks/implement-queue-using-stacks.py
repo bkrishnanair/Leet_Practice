@@ -12,7 +12,6 @@ class MyQueue:
                 self.stack2.append(self.stack1.pop())
 
         return self.stack2.pop()
-
     def peek(self) -> int:
 
         if not self.stack2:

@@ -19,6 +19,7 @@ class MyQueue:
                 self.stack2.append(self.stack1.pop())
 
         return self.stack2[-1]
+        
     def empty(self) -> bool:
          return not self.stack1 and not self.stack2
 

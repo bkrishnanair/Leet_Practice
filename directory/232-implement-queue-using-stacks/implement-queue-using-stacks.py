@@ -28,7 +28,6 @@ class MyQueue:
 
 
 #didnt understand
-
 # Your MyQueue object will be instantiated and called as such:
 obj = MyQueue()
 obj.emptyQueue()  # Clears the queue
